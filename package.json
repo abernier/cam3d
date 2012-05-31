@@ -1,0 +1,14 @@
+{
+  "name": "Camera",
+  "version": "0.0.0",
+  "author": "Antoine BERNIER",
+  "repository": {
+    "type": "git",
+    "url": "git://gist.github.com/1571037.git"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

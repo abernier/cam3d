@@ -1,0 +1,40 @@
+box-proto()
+    &,
+    > *
+        display:block;
+    
+    &
+        position:relative;
+    
+    > *
+        position:absolute; -webkit-backface-visibility:visible;
+    
+box(w = 1em, h = 1em, l = 1em)
+    &,
+    > *
+        -webkit-box-sizing:border-box; width:w; height:h;
+    
+    > .front
+        -webkit-transform:                translateZ( l / 2)
+    > .back
+        -webkit-transform:rotateY(180deg) translateZ( l / 2)
+    
+    > .right,
+    > .left
+        width:l; left:50%; margin-left:-l / 2;
+    > .right
+        -webkit-transform:rotateY( 90deg) translateZ( w / 2)
+    > .left
+        -webkit-transform:rotateY(-90deg) translateZ( w / 2)
+    
+    > .top,
+    > .bottom
+        height:l; top:50%; margin-top:-l / 2;
+    > .top
+        -webkit-transform:rotateX( 90deg) translateZ( h / 2)
+    > .bottom
+        -webkit-transform:rotateX(-90deg) translateZ( h / 2) rotate(180deg)
+
+.box
+    box-proto()
+    box()
